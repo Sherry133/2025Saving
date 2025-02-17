@@ -1,0 +1,88 @@
+.deposit-procedures {
+	counter-reset: procedure;
+}
+ul h3 {
+	text-transform: capitalize;
+	text-align: center;
+}
+
+.fa-spinner.fa-spin.fa-3x {
+	color: red !important;
+	font-size: 24px;
+	display: block;
+	text-align: center;
+}
+
+.procedure {
+	position: relative;
+	padding-left: 60px;
+	margin-bottom: 20px;
+}
+
+.procedure::before {
+	counter-increment: procedure;
+	content: counter(procedure);
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 48px;
+	font-weight: bold;
+	opacity: 0.7;
+}
+
+.procedure:nth-of-type(1)::before {
+	color: #ff0000;
+} /* Red */
+.procedure:nth-of-type(2)::before {
+	color: #00ff00;
+} /* Green */
+.procedure:nth-of-type(3)::before {
+	color: #0000ff;
+} /* Blue */
+.procedure:nth-of-type(4)::before {
+	color: #800080;
+} /* Purple */
+.procedure:nth-of-type(5)::before {
+	color: #000;
+} /* Red */
+
+li::marker {
+	content: none;
+}
+ul,
+ol {
+	padding-left: 0;
+}
+
+@include breakpoint('<=xsmall') {
+	@media screen and (max-width: 480px) {
+		li::marker {
+			content: none;
+		}
+	}
+	ul li,
+	ol li {
+		list-style-type: none;
+	}
+	ul,
+	ol {
+		padding-left: 0;
+	}
+}
+
+@include breakpoint('<=small') {
+	@media screen and (max-width: 768px) {
+		li::marker {
+			content: none;
+		}
+	}
+	ul li,
+	ol li {
+		list-style-type: none;
+	}
+	ul,
+	ol {
+		padding-left: 0;
+	}
+}

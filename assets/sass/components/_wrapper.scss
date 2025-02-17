@@ -1,0 +1,56 @@
+/* Wrapper */
+@import "mixins/buttons";
+.wrapper {
+	width: 100%;
+	padding-bottom: 0;
+	background-color: _palette(accent1, 'bg'); // Set background to black
+
+	> .inner {
+		width: 80em;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #000; // Set background to black to ensure consistency
+
+		> .main {
+			@include padding(6em, 6em);
+			background-color: _palette(bg);
+			z-index: 1000;
+
+			&.accent1 {
+				@include color(accent1);
+			}
+
+			&.accent2 {
+				@include color(accent2);
+			}
+
+			&.accent3 {
+				@include color(accent3);
+			}
+
+			&.accent4 {
+				@include color(accent4);
+			}
+
+			@include breakpoint('<=xlarge') {
+				@include padding(5em, 5em);
+			}
+
+			@include breakpoint('<=small') {
+				@include padding(3em, 2em);
+			}
+
+			@include breakpoint('<=xsmall') {
+				@include padding(3em, 1.5em);
+			}
+		}
+	}
+
+	@include breakpoint('<=xlarge') {
+		> .inner {
+			width: 72em;
+		}
+		@include color-button($p);
+	}
+}

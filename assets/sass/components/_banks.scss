@@ -1,0 +1,30 @@
+.banks-container {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	overflow-x: auto;
+	padding: 1.5em;
+}
+
+.banks-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+	grid-template-rows: auto auto;
+}
+
+.banks img {
+	max-width: 150px;
+	max-height: 50px;
+}
+
+// @media (max-width: 480px) {
+// 	.banks-grid {
+// 		display: flex;
+// 		flex-wrap: wrap;
+// 		justify-content: center;
+// 		grid-template-columns: repeat(2, 1fr);
+// 		grid-template-rows: auto auto;
+// 	}
+// }

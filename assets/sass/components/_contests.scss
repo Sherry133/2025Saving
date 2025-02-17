@@ -1,0 +1,88 @@
+.popup {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+
+	.popup-content {
+		background-color: #fefefe;
+		margin: 0 auto;
+		padding: 20px;
+		border: 1px solid #888;
+		width: 80%;
+		max-width: 600px;
+		position: relative;
+
+		h2,
+		p {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-top: 1em;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.close-contests {
+		color: #aaa;
+		position: absolute;
+		top: 10px;
+		right: 20px;
+		font-size: 38px;
+		font-weight: bold;
+		cursor: pointer;
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: #000;
+		}
+	}
+
+	@media (max-width: 768px) {
+		// Styles for tablets and smaller devices
+		.popup-content {
+			width: 90%;
+			margin: 10% auto;
+			padding: 15px;
+		}
+
+		.close-contests {
+			font-size: 32px;
+			top: 5px;
+			right: 15px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		// Styles for mobile phones
+		.popup-content {
+			width: 95%;
+			margin: 5% auto;
+			padding: 10px;
+		}
+
+		.close-contests {
+			font-size: 28px;
+			top: 5px;
+			right: 10px;
+		}
+
+		h2 {
+			font-size: 1.5em;
+		}
+
+		p {
+			font-size: 0.9em;
+		}
+	}
+}

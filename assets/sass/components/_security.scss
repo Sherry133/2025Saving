@@ -1,0 +1,50 @@
+/* Security Section */
+.security-section {
+	background-color: #fff;
+	padding: 2em 0;
+}
+
+.security-section .nacha h3 {
+	font-size: 2em;
+	color: #333;
+	text-align: center;
+	margin-bottom: 1.5em;
+}
+
+.content-block {
+	margin-bottom: 2em;
+	padding: 0 2em;
+}
+
+.content-block p {
+	font-size: 1em;
+	color: #666;
+	line-height: 1.6;
+	margin-bottom: 1em;
+	display: flex;
+	align-items: flex-start;
+}
+
+.icon {
+	margin-right: 10px;
+	color: #cb1318;
+}
+
+.image.main {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 1.5em auto;
+}
+
+@media (max-width: 768px) {
+	.security-section {
+		padding: 1.5em 1em;
+	}
+	.content-block {
+		padding: 0 1em;
+	}
+	.content-block p {
+		font-size: 0.9em;
+	}
+}

@@ -1,0 +1,137 @@
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	/* Set background to black */
+	color: _palette(fg);
+}
+.page-wrapper {
+	background-color: #000;
+}
+
+h1 {
+	font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+	font-size: 24px;
+	line-height: 1.4;
+	text-align: center;
+	color: _palette(accent2, bg);
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 24px;
+	line-height: 1.4;
+	text-align: center;
+	color: _palette(accent2, bg);
+	font-weight: bold;
+	text-transform: lowercase;
+}
+
+.achievements {
+	margin-top: 30px;
+}
+
+.achievements_content {
+	font-size: 18px;
+	line-height: 1.6;
+	text-align: center;
+	color: _palette(fg);
+}
+
+.minor {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+article {
+	background-color: #fff;
+	border-radius: 8px;
+	padding: 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.major-achievement {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.major-achievement strong {
+	font-size: 24px;
+	color: #333;
+	line-height: 1.4;
+}
+
+.list-group {
+	list-style-type: none;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.list-group li {
+	width: calc(60% - 10px);
+	margin-bottom: 10px;
+	padding: 10px;
+	border-radius: 4px;
+	font-size: 16px;
+	line-height: 1.4;
+}
+
+.list-group li:nth-child(odd) {
+	background-color: _palette(accent2, bg);
+	color: #fff;
+}
+
+.list-group li:nth-child(even) {
+	background-color: _palette(accent3, bgg);
+}
+.reveal {
+	position: relative;
+	transform: translateY();
+	opacity: 0;
+	transition: opacity 3s ease;
+}
+
+.reveal {
+	animation: fade-in linear forwards;
+	animation-timeline: view(contain);
+	animation-duration: 3s;
+	animation-delay: 0.25s;
+}
+
+@keyframes fade-in {
+	from {
+		scale: 0.5;
+		opacity: 0;
+	}
+	to {
+		scale: 1;
+		opacity: 1;
+	}
+}
+
+@media (max-width: 1680px) {
+	.list-group li {
+		width: 100%;
+	}
+
+	.major-achievement strong {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	h2 {
+		font-size: 20px;
+	}
+
+	.achievements_content {
+		font-size: 16px;
+	}
+}

@@ -1,0 +1,119 @@
+/* Features */
+
+.features {
+	@include vendor('display', 'flex');
+	@include vendor('flex-direction', 'row');
+	@include vendor('flex-wrap', 'nowrap');
+	margin: 0 0 _size(element-margin) 0;
+
+	section {
+		@include vendor('flex-grow', '0');
+		@include vendor('flex-shrink', '0');
+		border-left: solid 1px;
+		border-top: solid 1px;
+		padding: 2em 3em;
+		text-align: center;
+		width: calc(100% / 3);
+
+		&:nth-child(3n - 2) {
+			border-left-width: 0;
+		}
+
+		&:nth-child(-n + 3) {
+			border-top-width: 0;
+		}
+	}
+
+	@include breakpoint('<=medium') {
+		@include vendor('flex-direction', 'column');
+
+		section {
+			@include padding(3em, 3em);
+			border-left: 0;
+			width: 100%;
+
+			&:nth-child(-n + 3) {
+				border-top-width: 1px;
+			}
+
+			&:first-child {
+				border-top-width: 0;
+				padding-top: 1em;
+			}
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	@include breakpoint('<=small') {
+		section {
+			@include padding(3em, 2em);
+		}
+	}
+}
+
+// Mixin Declaration
+@mixin color-features($p: null) {
+	.features {
+		section {
+			border-color: _palette(accent3, 'bg');
+			gap: 1em;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.9) inset 0 0 10px
+				rgba(0, 0, 0, 0.5);
+			border-radius: 5px;
+			color: #fff;
+			background-color: _palette(accent1, 'bg');
+			position: relative;
+			padding: 20px;
+			border-radius: 10px;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+			h3 {
+				color: #ececec;
+				text-transform: capitalize;
+				font-family: 'Inter', sans-serif;
+			}
+		}
+
+		section:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.3),
+				inset 0 0 15px rgba(0, 0, 0, 0.3);
+		}
+
+		// Responsive adjustments
+		@media (max-width: 768px) {
+			.features {
+				flex-direction: column;
+			}
+
+			.features section {
+				width: auto;
+				margin: 0.5em 0;
+			}
+		}
+
+		// letter-animation section
+		.letter-animation {
+			overflow: hidden;
+			display: inline-block;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.letter-animation span {
+			display: inline-block;
+			opacity: 0;
+			animation: fadeInLetters 0.5s forwards;
+		}
+
+		@keyframes fadeInLetters {
+			to {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+@include color-features;

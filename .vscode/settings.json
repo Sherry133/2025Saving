@@ -1,0 +1,24 @@
+{
+	"editor.fontSize": 14,
+	"git.ignoreLimitWarning": true,
+	"cSpell.words": ["NACHA"],
+	"liveServer.settings.port": 5501,
+
+	"liveSassCompile.settings.formats": [
+		{
+			"format": "expanded",
+			"extensionName": ".css",
+			"savePath": "/assets/css"
+		}
+	],
+	"liveSassCompile.settings.excludeList": [
+		"/**/node_modules/**",
+		"/.vscode/**"
+	],
+	"liveSassCompile.settings.useNewCompiler": true,
+	"liveSassCompile.settings.autoprefix": true,
+	"liveServer.settings.donotVerifyTags": true,
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+}

@@ -1,0 +1,184 @@
+/* Button */
+@import "mixins/buttons";
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+button,
+.button {
+	@include vendor('appearance', 'none');
+	@include vendor(
+		'transition',
+		'background-color #{_duration(transition)} ease-in-out, color #{_duration(transition)} ease-in-out'
+	);
+	border-radius: _size(element-height) / 0.7;
+	border: 0;
+	cursor: pointer !important;
+	display: inline-block;
+	font-weight: _font(weight-extrabold);
+	height: auto;
+	line-height: 1.2;
+	padding: 0.8em 1.5em;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	letter-spacing: _font(letter-spacing-heading);
+	text-transform: uppercase;
+	font-size: 0.8em;
+
+	&.icon {
+		&:before {
+			margin-right: 0.5em;
+		}
+	}
+
+	&.fit {
+		width: 100%;
+	}
+
+	&.small {
+		font-size: 0.7em;
+		padding: 0.4em 1.2em;
+	}
+
+	&.large {
+		font-size: 1em;
+	}
+	&#contest-btn.small {
+		font-size: 0.7em;
+		padding: 0.4em 1em;
+		line-height: 1.2;
+		height: auto;
+		// min-height: 2.5em;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background-image: linear-gradient(90deg, #cfab38,
+      #d4af37,
+      #7cb6d5);
+
+	&.disabled,
+	&:disabled {
+		@include vendor('pointer-events', 'none');
+		opacity: 0.25;
+	}
+	@media (max-width: 480px) {
+		input[type='submit'],
+		input[type='reset'],
+		input[type='button'],
+		button,
+		.button {
+			font-size: 0.7em;
+			padding: 0.4em 1em;
+
+			&#contest-btn.small {
+				font-size: 0.7em;
+				padding: 0.3em 0.8em;
+				min-height: 2.5em;
+				margin-top: -2px;
+				margin-bottom: 0;
+				align-self: bottom;
+			}
+		}
+	}
+	@media (min-width: 481px) and (max-width: 768px) {
+		input[type='submit'],
+		input[type='reset'],
+		input[type='button'],
+		button,
+		.button {
+			font-size: 0.85em;
+			padding: 0.90em 1.2em;
+
+			&#contest-btn.small {
+				font-size: 0.85em;
+				padding: 0.35em 0.9em;
+				min-height: 2.3em;
+				align-self: center;
+			}
+		}
+	}
+}
+
+@mixin color-button($p: null) {
+	input[type='submit'],
+	input[type='reset'],
+	input[type='button'],
+	button,
+	.button {
+		background: rgb(222,33,11);
+		background: linear-gradient(to right, rgba(222,33,11,1) 15%, rgba(79,144,77,1) 55%, rgba(0,149,255,1) 100%);
+		background-size: 500%;
+		animation: background-animation 5s linear infinite alternate;
+		box-shadow: inset 0 0 0 1px _palette($p, border);
+		color: _palette($p, 'border1') !important;
+
+		@keyframes background-animation {
+			0% {
+				background-position: 0% 0;
+			}
+			100% {
+				background-position: 100% 0;
+			}
+		}
+
+		&:hover {
+			@keyframes pulse {
+				0% {
+					transform: scale(1);
+				}
+				50% {
+					transform: scale(1.05);
+				}
+				100% {
+					transform: scale(1);
+				}
+			}
+			@include vendor('animation', 'pulse 1s ease-in-out infinite');
+		}
+
+		&:active {
+			background-color: _palette($p, 'border-bg-alt');
+		}
+
+		@if ($p == null) {
+			&.primary {
+				background-color: _palette(accent1, #127789);
+				color: _palette(accent1, fg-bold) !important;
+
+				&:hover {
+					box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1),
+						-10px -10px 1-px, #618f97;
+				}
+
+				&:active {
+					background-color: lighten(_palette(accent1, 'bg'), 10);
+				}
+			}
+		} @else {
+			&.primary {
+				box-shadow: 0 0 3em 0 _palette(shadow);
+
+				&.primary1 {
+					box-shadow: 0 0 3em 0 _palette(shadow);
+
+					&:hover {
+						background-color: saturate(
+							lighten(_palette($p, border), 5),
+							3
+						);
+					}
+
+					&:active {
+						background-color: saturate(
+							darken(_palette($p, bg), 15),
+							5
+						);
+					}
+				}
+			}
+		}
+	}
+}
+
+@include color-button($p);
+}

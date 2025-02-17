@@ -1,0 +1,43 @@
+.getting-started-procedures {
+	counter-reset: procedure;
+}
+.fa-solid.fa-apple-whole {
+	color: red !important;
+	font-size: 24px; /* Adjust size as needed */
+	display:block;
+	text-align: center;
+}
+
+.starting-procedure {
+	position: relative;
+	padding-left: 60px;
+	margin-bottom: 20px;
+}
+
+.starting-procedure::before {
+	counter-increment: procedure;
+	content: counter(procedure);
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 48px;
+	font-weight: bold;
+	opacity: 0.7;
+}
+
+.starting-procedure:nth-of-type(1)::before {
+	color: #ff0000;
+} /* Red */
+.starting-procedure:nth-of-type(2)::before {
+	color: #00ff00;
+} /* Green */
+.starting-proceduree:nth-of-type(3)::before {
+	color: #0000ff;
+} /* Blue */
+.starting-procedure:nth-of-type(4)::before {
+	color: #800080;
+} /* Purple */
+.starting-procedure:nth-of-type(5)::before {
+	color: #000;
+} /* Red */
