@@ -14,7 +14,7 @@
 
 			h1 {
 				font-size: 1.75em;
-				color: white;
+				color: #656dba;
 			}
 			p {
 				color: white;
@@ -22,8 +22,8 @@
 
 
 			&.accent1 {
-				@include color-typography(accent1);
-				@include color-button(accent1);
+				@include color-typography(bg);
+				@include color-button(bg);
 			}
 		//color changes must be made in main.css!!!
 			&.accent2 {

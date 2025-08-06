@@ -7,6 +7,7 @@
 @import 'fontawesome-all.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900');
+@import 'mixins/buttons';
 
 // Breakpoints.
 
@@ -40,7 +41,7 @@
 );
 
 // Mixins.
-
+@import 'mixins/buttons';
 @mixin color($p) {
 	@include color-typography($p);
 	@include color-box($p);
@@ -59,7 +60,7 @@
 @import 'base/page';
 @import 'base/fonts';
 @import 'base/typography';
-@import "mixins/buttons";
+
 
 // Component.
 
@@ -70,6 +71,7 @@
 @import 'components/form';
 @import 'components/icon';
 @import 'components/image';
+@import 'components/image-bubble';
 @import 'components/list';
 @import 'components/actions';
 @import 'components/icons';

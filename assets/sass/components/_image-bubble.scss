@@ -1,0 +1,42 @@
+/* Image bubble effect */
+.image-bubble {
+    position: relative;
+    width: 60%;
+    float: left;
+    shape-outside: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    margin: 10px 20px 10px 0;
+}
+
+.image-bubble-1 {
+    position: relative;
+    width: 60%;
+    float: left;
+    shape-outside: circle(50%);
+    clip-path: circle(50%);
+    margin: 10px 20px 10px 0;
+}
+
+.image-bubble img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-bubble-1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-bubble.float-right {
+    float: right;
+    /* Adjust margin to create space on the left of the image */
+    margin: 10px 0 10px 20px;
+}
+
+.image-bubble-1.float-right {
+    float: right;
+    /* Adjust margin to create space on the left of the image */
+    margin: 10px 0 10px 20px;
+}

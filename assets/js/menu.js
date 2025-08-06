@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		{ label: 'Getting Started', url: 'gettingstarted.html' },
 		{ label: 'How it Works', url: 'howitworks.html' },
 		{ label: 'Security First', url: 'security.html' },
+		{ label: 'Instant Payments', url: 'instant-payments.html' },
 		{ label: 'Achievements', url: 'achievements.html' },
 		{ label: 'Testimonials', url: 'testimonials.html' },
 		{ label: 'Blog', url: 'https://saveforamerica.org' },

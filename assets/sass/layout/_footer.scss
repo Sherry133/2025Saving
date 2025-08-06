@@ -158,9 +158,13 @@
 	}
 }
 .modal {
-	background-color: _palette(accent3, 'bg');
-	// background-color: transparentize($color: #525567, $amount: 0);
-	width: 60%;
+    background: linear-gradient(
+        135deg,
+       #eb8585,
+        #fff,
+      #b3d6e6
+    );
+    width: 60%;
 }
 #modal-question {
 	color: _palette(accent3, 'bg');

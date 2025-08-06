@@ -196,7 +196,7 @@ $breakpoints: () !global;
 	}
 
 	// Output.
-	@media #{$media} {
-		@content;
-	}
+@media #{$media} {
+    @content;
+}
 }

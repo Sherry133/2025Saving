@@ -2,7 +2,7 @@
 	"editor.fontSize": 14,
 	"git.ignoreLimitWarning": true,
 	"cSpell.words": ["NACHA"],
-	"liveServer.settings.port": 5501,
+	"liveServer.settings.port": 5502,
 
 	"liveSassCompile.settings.formats": [
 		{

@@ -52,6 +52,8 @@
 		}
 	}
 
+
+
 	@include breakpoint('<=small') {
 		&.main {
 			margin: 0 0 _size(element-margin) 0;
@@ -101,4 +103,5 @@
 			@include vendor('object-position', 'center');
 		}
 	}
+
 }

@@ -1,0 +1,129 @@
+/// Button Mixins
+/// @author GitHub Copilot
+/// @group mixins/buttons
+
+// Color scheme variables (adjust these to match your project's color palette)
+$button-colors: (
+  'primary': #4a98e2,
+  'secondary': #6b7280,
+  'success': #10b981,
+  'danger': #ef4444,
+  'warning': #f59e0b,
+  'info': #3b82f6,
+  'light': #f3f4f6,
+  'dark': #1f2937
+) !default;
+
+/// Base button styles
+/// @param {map} $colors - Optional color map to override defaults
+@mixin button-base($colors: $button-colors) {
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 2px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: _size(border-radius);
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+
+  &:focus, &:hover {
+    text-decoration: none;
+    outline: 0;
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}
+
+/// Button size variations
+/// @param {string} $size - Size name (small, medium, large)
+@mixin button-size($size) {
+  @if $size == 'small' {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  } @else if $size == 'large' {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+/// Create button variant
+/// @param {color} $background - Button background color
+/// @param {color} $border - Button border color
+/// @param {color} $color - Button text color
+/// @param {color} $hover-background - Hover background color
+/// @param {color} $hover-border - Hover border color
+/// @param {color} $hover-color - Hover text color
+@mixin button-variant(
+  $background,
+  $border: $background,
+  $color: #fff,
+  $hover-background: darken($background, 7.5%),
+  $hover-border: darken($border, 10%),
+  $hover-color: #fff
+) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:hover, &:focus {
+    color: $hover-color;
+    background-color: $hover-background;
+    border-color: $hover-border;
+  }
+
+  &:active {
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12.5%);
+  }
+}
+
+/// Outline button variant
+/// @param {color} $color - Button outline color
+@mixin button-outline-variant($color) {
+  color: $color;
+  background-color: transparent;
+  border-color: $color;
+
+  &:hover, &:focus {
+    color: #fff;
+    background-color: $color;
+    border-color: $color;
+  }
+}
+
+/// Generate all button variations based on color map
+/// @param {map} $colors - Color map
+@mixin generate-buttons($colors: $button-colors) {
+  @each $name, $color in $colors {
+    &.#{$name} {
+      @include button-variant($color);
+    }
+
+    &.outline-#{$name} {
+      @include button-outline-variant($color);
+    }
+  }
+}
+
+// Your existing color-button mixin (keep this)
+@mixin color-button($color) {
+  background-color: $color;
+  border: 2px solid $color;
+
+  &:hover {
+    background-color: transparent;
+    color: $color;
+  }
+
+  &:active {
+    background-color: rgba($color, 0.1);
+  }
+}

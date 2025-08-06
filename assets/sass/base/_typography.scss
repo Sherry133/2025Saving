@@ -2,6 +2,7 @@
 
 body {
 	color: _palette(fg);
+	// @include color-typography();
 }
 
 body,
@@ -194,11 +195,14 @@ hr {
 	text-align: right;
 }
 
-@mixin color-typography($p: null) {
-	@if $p != null {
-		background-color: _palette($p, bg);
-		color: _palette($p, fg);
-	}
+@mixin color-typography($p) {
+  @if type-of($p) == 'string' {
+	background-color: _palette($p);
+	color: _palette(fg);
+  } @else if type-of($p) == 'map' {
+	background-color: _palette($p, bg);
+	color: _palette($p, fg);
+  }
 
 	input,
 	select,
@@ -240,4 +244,6 @@ hr {
 	}
 }
 
-@include color-typography;
+body {
+  @include color-typography(accent2);
+}

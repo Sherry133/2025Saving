@@ -7,8 +7,8 @@
 }
 
 #menu {
-	@include color-typography(accent2);
-	@include color-button(accent2);
+	@include color-typography(_palette(accent2, fg));
+	@include color-button(_palette(accent2, bg));
 	@include vendor('transform', 'translateX(20em)');
 	@include vendor(
 		'transition',

@@ -67,8 +67,28 @@
 /// Gets a palette value.
 /// @param {string} $keys Key(s).
 /// @return {string} Value.
-@function _palette($keys...) {
-	@return val($palette, $keys...);
+@function _palette($key, $subkey: null) {
+  @if $subkey == null {
+    @if map-has-key($palette, $key) {
+      @return map-get($palette, $key);
+    } @else {
+      @warn "Palette key '#{$key}' not found!";
+      @return null;
+    }
+  } @else {
+    @if map-has-key($palette, $key) {
+      $map: map-get($palette, $key);
+      @if map-has-key($map, $subkey) {
+        @return map-get($map, $subkey);
+      } @else {
+        @warn "Palette subkey '#{$subkey}' not found in '#{$key}'!";
+        @return null;
+      }
+    } @else {
+      @warn "Palette key '#{$key}' not found!";
+      @return null;
+    }
+  }
 }
 
 /// Gets a size value.
