@@ -2135,9 +2135,9 @@ button:disabled,
     padding: 0.35em 0.9em;
     min-height: 2.3em;
     align-self: center;
-    background-image: linear-gradient(to right, #cfab38,
-        #d4af37,
-        #7cb6d5);
+    background-image: linear-gradient(to right, #4f38cf,
+        #d43737,
+        #edf0f1);
 
   }
 }
@@ -2589,7 +2589,7 @@ input[type=radio]+label:before {
     color: #656dba;
     /* This is the field border color;  */
     font-weight: weight-extrabold;
-    background-color: #eeabab;
+    background-color: #656dba;
     z-index: 1000;
     cursor: text;
   }
@@ -2627,7 +2627,7 @@ input[type=password],
 input[type=email],
 select,
 textarea {
-  background-color: hsl(197, 47%, 78%);
+  background-color: #000000;
   border-color: #ffffff;
   z-index: 1;
 }
@@ -2638,7 +2638,7 @@ input[type=email]:focus,
 select:focus,
 textarea:focus {
   border: 1px solid rgba(67, 75, 86, 0.55);
-  box-shadow: inset 0 0 0 1px hsl(197, 47%, 78%);
+  box-shadow: inset 0 0 0 1px #000000;
   background-color: #ffffff;
 }
 
@@ -2687,9 +2687,9 @@ input[type=password].invert,
 input[type=email].invert,
 select.invert,
 textarea.invert {
-  background: #eb8585;
+  background: #000000;
   color: #fff;
-  border: 1px solid #eeabab;
+  border: 1px solid #333333;
 }
 
 input[type=text].invert::-webkit-input-placeholder,
@@ -2697,7 +2697,7 @@ input[type=password].invert::-webkit-input-placeholder,
 input[type=email].invert::-webkit-input-placeholder,
 select.invert::-webkit-input-placeholder,
 textarea.invert::-webkit-input-placeholder {
-  color: #eeabab !important;
+  color: #999999 !important;
 }
 
 input[type=text].invert:-moz-placeholder,
@@ -2705,7 +2705,7 @@ input[type=password].invert:-moz-placeholder,
 input[type=email].invert:-moz-placeholder,
 select.invert:-moz-placeholder,
 textarea.invert:-moz-placeholder {
-  color: #eeabab !important;
+  color: #999999 !important;
 }
 
 input[type=text].invert::-moz-placeholder,
@@ -2713,7 +2713,7 @@ input[type=password].invert::-moz-placeholder,
 input[type=email].invert::-moz-placeholder,
 select.invert::-moz-placeholder,
 textarea.invert::-moz-placeholder {
-  color: #eeabab !important;
+  color: #999999 !important;
 }
 
 input[type=text].invert:-ms-input-placeholder,
@@ -2721,7 +2721,7 @@ input[type=password].invert:-ms-input-placeholder,
 input[type=email].invert:-ms-input-placeholder,
 select.invert:-ms-input-placeholder,
 textarea.invert:-ms-input-placeholder {
-  color: #eeabab !important;
+  color: #999999 !important;
 }
 
 select {
@@ -4176,7 +4176,9 @@ article {
 .wrapper>.inner>.main.accent1 input[type=button],
 .wrapper>.inner>.main.accent1 button,
 .wrapper>.inner>.main.accent1 .button {
-  background-image: linear-gradient(to right, #935123, #656dba, #4d5a90, #7183cd, #935123);
+  background-image: linear-gradient(to right, #4f38cf,
+      #d43737,
+      #edf0f1);
   background-size: 500%;
   animation: background-animation 5s linear infinite alternate;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
@@ -4512,7 +4514,9 @@ article {
 .wrapper>.inner>.main.accent2 input[type=button],
 .wrapper>.inner>.main.accent2 button,
 .wrapper>.inner>.main.accent2 .button {
-  background-image: linear-gradient(to right, #935123, #656dba, #4d5a90, #7183cd, #935123);
+  background-image: linear-gradient(to right, #4f38cf,
+      #d43737,
+      #edf0f1);
   background-size: 500%;
   animation: background-animation 5s linear infinite alternate;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
@@ -4713,9 +4717,9 @@ article {
 .wrapper>.inner>.main.accent2 input[type=email].invert,
 .wrapper>.inner>.main.accent2 select.invert,
 .wrapper>.inner>.main.accent2 textarea.invert {
-  background: #eb8585;
+  background: #000000;
   color: #fff;
-  border: 1px solid #eeabab;
+  border: 1px solid #333333;
 }
 
 .wrapper>.inner>.main.accent2 input[type=text].invert::-webkit-input-placeholder,
@@ -4723,7 +4727,7 @@ article {
 .wrapper>.inner>.main.accent2 input[type=email].invert::-webkit-input-placeholder,
 .wrapper>.inner>.main.accent2 select.invert::-webkit-input-placeholder,
 .wrapper>.inner>.main.accent2 textarea.invert::-webkit-input-placeholder {
-  color: #eeabab !important;
+  color: #999999 !important;
 }
 
 .wrapper>.inner>.main.accent2 input[type=text].invert:-moz-placeholder,
@@ -4731,7 +4735,7 @@ article {
 .wrapper>.inner>.main.accent2 input[type=email].invert:-moz-placeholder,
 .wrapper>.inner>.main.accent2 select.invert:-moz-placeholder,
 .wrapper>.inner>.main.accent2 textarea.invert:-moz-placeholder {
-  color: #eeabab !important;
+  color: #999999 !important;
 }
 
 .wrapper>.inner>.main.accent2 input[type=text].invert::-moz-placeholder,
@@ -4739,7 +4743,7 @@ article {
 .wrapper>.inner>.main.accent2 input[type=email].invert::-moz-placeholder,
 .wrapper>.inner>.main.accent2 select.invert::-moz-placeholder,
 .wrapper>.inner>.main.accent2 textarea.invert::-moz-placeholder {
-  color: #eeabab !important;
+  color: #999999 !important;
 }
 
 .wrapper>.inner>.main.accent2 input[type=text].invert:-ms-input-placeholder,
@@ -4747,7 +4751,7 @@ article {
 .wrapper>.inner>.main.accent2 input[type=email].invert:-ms-input-placeholder,
 .wrapper>.inner>.main.accent2 select.invert:-ms-input-placeholder,
 .wrapper>.inner>.main.accent2 textarea.invert:-ms-input-placeholder {
-  color: #eeabab !important;
+  color: #999999 !important;
 }
 
 .wrapper>.inner>.main.accent2 select {
@@ -4848,7 +4852,9 @@ article {
 .wrapper>.inner>.main.accent3 input[type=button],
 .wrapper>.inner>.main.accent3 button,
 .wrapper>.inner>.main.accent3 .button {
-  background-image: linear-gradient(to right, #935123, #656dba, #4d5a90, #7183cd, #935123);
+  background-image: linear-gradient(to right, #4f38cf,
+      #d43737,
+      #edf0f1);
   background-size: 500%;
   animation: background-animation 5s linear infinite alternate;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
@@ -5184,7 +5190,9 @@ article {
 .wrapper>.inner>.main.accent4 input[type=button],
 .wrapper>.inner>.main.accent4 button,
 .wrapper>.inner>.main.accent4 .button {
-  background-image: linear-gradient(to right, #935123, #656dba, #4d5a90, #7183cd, #935123);
+  background-image: linear-gradient(to right, #4f38cf,
+      #d43737,
+      #edf0f1);
   background-size: 500%;
   animation: background-animation 5s linear infinite alternate;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
@@ -5730,11 +5738,10 @@ article {
   visibility: hidden;
   width: 22em;
   z-index: 10002;
-  background-image: linear-gradient(135deg, #B3000C,
+  background-image: linear-gradient(135deg, #495bb1, #2b1fd5, #B3000C,
       #E40010,
-      #d8d8d8c7,
-      #1FD537,
-      #00B32C);
+      #ececec,
+      #ebe9f0);
 
 }
 
@@ -6062,7 +6069,9 @@ body.is-menu-visible #menu {
 #banner>.items section.accent1 input[type=button],
 #banner>.items section.accent1 button,
 #banner>.items section.accent1 .button {
-  background-image: linear-gradient(to right, #935123, #656dba, #4d5a90, #7183cd, #935123);
+  background-image: linear-gradient(to right, #4f38cf,
+      #d43737,
+      #edf0f1);
   background-size: 500%;
   animation: background-animation 5s linear infinite alternate;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
@@ -6143,11 +6152,10 @@ body.is-menu-visible #menu {
 
 #banner>.items section.accent2 {
 
-  background-image: linear-gradient(135deg, #B3000C,
+  background-image: linear-gradient(135deg, #495bb1, #2b1fd5, #B3000C,
       #E40010,
-      #d8d8d8c7,
-      #1FD537,
-      #00B32C);
+      #ececec,
+      #ebe9f0);
 
 }
 
@@ -6156,10 +6164,9 @@ body.is-menu-visible #menu {
 #banner>.items section.accent2 input[type=button],
 #banner>.items section.accent2 button,
 #banner>.items section.accent2 .button {
-  background-image: linear-gradient(to right, #b53131f7,
-      #d57cbf,
-      #7cb6d5,
-      #7cb6d5);
+  background-image: linear-gradient(to right, #2b1fd5,
+      #d43737,
+      #efeff5f9);
 
   background-size: 500%;
   animation: background-animation 5s linear infinite alternate;
