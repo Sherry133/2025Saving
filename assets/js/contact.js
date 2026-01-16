@@ -2,20 +2,23 @@ function validateForm() {
 	var name = document.getElementById('name').value;
 	var email = document.getElementById('email').value;
 	var category = document.getElementById('category').value;
-	var companyName = document.getElementById('company-name').value;
+	var companyName = document.getElementById('company-name');
 	// var priority = document.querySelector('input[name="priority"]:checked');
 	var institutionType = document.querySelector(
 		'input[name="priority"]:checked'
 	);
 	// var human = document.getElementById('demo-human').checked;
 
+	// Set reply-to email for Formspree
+	document.getElementById('_replyto').value = email;
+
 	// Basic name validation
 	if (name.trim() == '') {
 		alert('Please enter your name.');
 		return false;
 	}
-	// Basic company name validation
-	if (companyName.trim() == '') {
+	// Basic company name validation (only for quote form)
+	if (companyName && companyName.value.trim() == '') {
 		alert('Please enter your Company name.');
 		return false;
 	}
