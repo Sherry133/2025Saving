@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		{ label: 'Security First', url: 'security.html' },
 		{ label: 'Instant Payments', url: 'instant-payments.html' },
 		{ label: 'Achievements', url: 'achievements.html' },
+		{ label: 'Media', url: 'media.html' },
 		{ label: 'Testimonials', url: 'testimonials.html' },
 		{ label: 'Blog', url: 'https://saveforamerica.org' },
 		{

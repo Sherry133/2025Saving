@@ -5609,6 +5609,22 @@ article {
   color: #eb8585;
 }
 
+#contest-btn {
+  color: #ffd700 !important;
+}
+
+#contest-btn:hover {
+  color: #ffffff !important;
+}
+
+.news-btn {
+  color: #00ffcc !important;
+}
+
+.news-btn:hover {
+  color: #ffffff !important;
+}
+
 @media screen and (max-width: 1280px) {
   #header>.logo span {
     top: -0.05em;
@@ -5741,15 +5757,11 @@ article {
   visibility: hidden;
   width: 22em;
   z-index: 10002;
-  background-image: linear-gradient(135deg, #7BBFF5 0%,
-      /* deeper sky blue */
-      #F39AB9 40%,
-      /* deeper blush pink */
-      #5FD2C4 80%,
-      /* deeper mint/teal */
-      #FFF2E4 100%);
-  /* warm off‑white fade */
-
+  background-image: linear-gradient(135deg,
+      #008080 20%,
+      #0504aa 50%,
+      #008080 100%,
+      #0504aa 20%);
 }
 
 #menu input,
@@ -6171,14 +6183,10 @@ body.is-menu-visible #menu {
 #banner>.items section.accent2 {
 
   background-image: linear-gradient(135deg,
-      #7BBFF5 0%,
-      /* deeper sky blue */
-      #F39AB9 40%,
-      /* deeper blush pink */
-      #5FD2C4 80%,
-      /* deeper mint/teal */
-      #FFF2E4 100%);
-  /* warm off‑white fade */
+      #008080 20%,
+      #0504aa 50%,
+      #008080 100%,
+      #0504aa 20%);
 }
 
 #banner>.items section.accent2 input[type=submit],
@@ -6187,8 +6195,8 @@ body.is-menu-visible #menu {
 #banner>.items section.accent2 button,
 #banner>.items section.accent2 .button {
   background-image: linear-gradient(to right, #5FD2C4,
-      #F39AB9,
-      #efeff5f9);
+      #ffce1b,
+      #008080);
 
   background-size: 500%;
   animation: background-animation 5s linear infinite alternate;
@@ -6557,16 +6565,6 @@ body.is-menu-visible #menu {
   image-rendering: pixelated;
 }
 
-/* .overlay-text {
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  text-align: center;
-  z-index: 2;
-  width: 80%;
-  padding: 20px;
-} */
 .overlay-text {
   position: absolute;
   top: 5%;
@@ -7075,6 +7073,14 @@ body.is-preload #banner>.slider {
 
   #page-wrapper> :last-child {
     padding-bottom: 0;
+  }
+}
+
+/* Wrap spring overlay text after "INTO" on large screens */
+@media screen and (min-width: 1280px) {
+  #banner .slider article .overlay-text {
+    max-width: 290px !important;
+    width: 290px !important;
   }
 }
 
