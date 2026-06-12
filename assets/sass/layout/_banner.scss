@@ -171,6 +171,23 @@
 			height: 20em;
 			max-height: 40vh;
 		}
+
+		.overlay-text {
+			width: 50%;
+			top: 3%;
+			left: 3%;
+			padding: 6px;
+		}
+
+		.overlay-text h1 {
+			font-size: 1.1em;
+			margin: 0 0 0.2em 0;
+		}
+
+		.overlay-text h2 {
+			font-size: 0.9em;
+			margin: 0 0 0.3em 0;
+		}
 		// New media query for landscape orientation
 		@media screen and (max-width: 480px) and (orientation: landscape) {
 			> .items {

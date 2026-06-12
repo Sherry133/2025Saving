@@ -3905,7 +3905,7 @@ h3 {
   text-align: center;
   color: #656dba;
   font-weight: bold;
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
 .achievements {
@@ -6653,6 +6653,23 @@ body.is-preload #banner>.slider {
   #banner>.slider {
     height: 20em;
     max-height: 40vh;
+  }
+
+  #banner .overlay-text {
+    width: 50% !important;
+    top: 3% !important;
+    left: 3% !important;
+    padding: 8px !important;
+  }
+
+  #banner .overlay-text h1 {
+    font-size: 2.1em !important;
+    margin: 0 0 0.2em 0 !important;
+  }
+
+  #banner .overlay-text h2 {
+    font-size: 0.9em !important;
+    margin: 0 0 0.3em 0 !important;
   }
 }
 
