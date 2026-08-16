@@ -468,42 +468,88 @@
 	<script src="assets/js/menu.js"></script>
 	<script src="assets/js/contests.js"></script>
 	<script src="assets/js/scroll.js"></script>
-	<!-- <script>
+	<!-- <script>-->
 
-<!-- Overview Modal -->
+	<!-- Overview Modal -->
 	<div id="overview-modal"
-		style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;">
-		<div style="position:relative; width:90%; max-width:1280px;">
-			<span id="close-overview"
-				style="position:absolute; top:-40px; right:0; color:#fff; font-size:2em; cursor:pointer;">&times;</span>
-			<iframe
-				src="https://docs.google.com/presentation/d/e/2PACX-1vSuMvrz_h2Ns3aSvYO5Q5mUlumiHSaqC3zMkf7gCy4o7C2NdQ1t9dfOqyQWUy14iw/pubembed?start=true&loop=true&delayms=3000"
-				frameborder="0" width="100%" height="600"
-				allowfullscreen="true" mozallowfullscreen="true"
-				webkitallowfullscreen="true">
-			</iframe>
+		style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center;">
+		<div id="overview-container"
+			style="position:relative; width:92%; max-width:960px; background:#000; border-radius:6px; overflow:hidden;">
+			<button id="close-overview" aria-label="Close"
+				style="position:absolute; top:8px; right:12px; z-index:10; background:transparent; color:#fff; border:none; font-size:32px; line-height:1; cursor:pointer;">&times;</button>
+			<div id="unmute-hint"
+				style="position:absolute; bottom:48px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.6); color:#fff; padding:6px 14px; border-radius:20px; font-size:0.8em; pointer-events:none; z-index:5;">
+				🔇 Tap the video to unmute
+			</div>
+			<div
+				style="display:flex; justify-content:center; gap:8px; padding:8px; background:#111;">
+				<span
+					style="color:#aaa; font-size:0.85em; line-height:2;">Speed:</span>
+				<button onclick="setOverviewSpeed(0.5)"
+					style="padding:4px 10px; border-radius:4px; border:1px solid #555; background:#222; color:#fff; cursor:pointer;">0.5×</button>
+				<button onclick="setOverviewSpeed(0.9)"
+					style="padding:4px 10px; border-radius:4px; border:1px solid #555; background:#222; color:#fff; cursor:pointer;">0.9×</button>
+				<button onclick="setOverviewSpeed(1.0)"
+					style="padding:4px 10px; border-radius:4px; border:1px solid #555; background:#222; color:#fff; cursor:pointer;">1×</button>
+			</div>
+			<div id="overview-video-wrapper"></div>
 		</div>
 	</div>
 
 	<script>
-		document.getElementById('overview-btn').addEventListener('click', function (e) {
-			e.preventDefault();
+		(function () {
 			var modal = document.getElementById('overview-modal');
-			var iframe = modal.querySelector('iframe');
-			// Reset the iframe by clearing and reassigning the src
-			var src = iframe.src;
-			iframe.src = '';
-			iframe.src = src;
-			modal.style.display = 'flex';
-		});
-		document.getElementById('close-overview').addEventListener('click', function () {
-			document.getElementById('overview-modal').style.display = 'none';
-		});
-		document.getElementById('overview-modal').addEventListener('click', function (e) {
-			if (e.target === this) this.style.display = 'none';
-		});
-	</script>
+			var wrapper = document.getElementById('overview-video-wrapper');
+			var closeBtn = document.getElementById('close-overview');
+			var trigger = document.getElementById('overview-btn');
+			var unmuteHint = document.getElementById('unmute-hint');
+			var videoSrc = 'videos/School Savings General Video1.mp4';
+			var currentVideo = null;
 
+			function createVideo() {
+				var v = document.createElement('video');
+				v.id = 'overview-video';
+				v.src = videoSrc;
+				v.autoplay = true;
+				v.muted = true;
+				v.loop = true;
+				v.playsinline = true;
+				v.preload = 'auto';
+				v.playbackRate = 0.9;
+				v.controls = true;
+				v.style.cssText = 'width:100%; display:block; max-height:70vh;';
+				v.addEventListener('volumechange', function () {
+					if (!v.muted) unmuteHint.style.display = 'none';
+				});
+				wrapper.appendChild(v);
+				currentVideo = v;
+			}
+
+			function destroyVideo() {
+				if (currentVideo) {
+					currentVideo.pause();
+					currentVideo.src = '';
+					currentVideo.load();
+				}
+				wrapper.innerHTML = '';
+				currentVideo = null;
+				unmuteHint.style.display = 'block';
+			}
+
+			function openModal() { modal.style.display = 'flex'; createVideo(); }
+			function closeModal() { modal.style.display = 'none'; destroyVideo(); }
+
+			trigger.addEventListener('click', function (e) { e.preventDefault(); openModal(); });
+			closeBtn.addEventListener('click', closeModal);
+			modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+			document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+		})();
+
+		function setOverviewSpeed(rate) {
+			var v = document.getElementById('overview-video');
+			if (v) v.playbackRate = rate;
+		}
+	</script>
 </body>
 
 </html>
