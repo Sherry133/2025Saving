@@ -515,7 +515,7 @@
 				v.loop = true;
 				v.playsinline = true;
 				v.preload = 'auto';
-				v.playbackRate = 0.9;
+				v.playbackRate = window.matchMedia('(max-width:768px)').matches ? 1.0 : 0.9;
 				v.controls = true;
 				v.style.cssText = 'width:100%; display:block; max-height:70vh;';
 				v.addEventListener('volumechange', function () {
