@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-	const footerPlaceholder = document.getElementById('footer-placeholder');
+    const footerPlaceholder = document.getElementById('footer-placeholder');
 
-	if (!footerPlaceholder) {
-		console.error('Footer placeholder not found.');
-		return;
-	}
+    if (!footerPlaceholder) {
+        console.error('Footer placeholder not found.');
+        return;
+    }
 
-	footerPlaceholder.innerHTML = `
+    footerPlaceholder.innerHTML = `
 
 <footer id="footer">
 
@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     data-answer="Select a school or two. Contact School Savings at support@schoolsavings.com to register. There is only one bank sponsor per school. All bank accounts are at the sponsor's bank. Minimum deposit is $.01.">
                     <a href="#" class="faq-link">How do I get started?</a>
                 <li class="faq-item" data-question="Pricing"
-                    data-answer="Reasonable pricing allows all students to participate. Teachers and parents with children in School Savings may also make deposits at school. Request a quote. https://ww2.schoolsavings.com/quote.html">
+                    data-answer="Reasonable pricing allows all students to participate. Teachers and parents with children in School Savings may also make deposits at school."
+                    data-action-url="quote.html"
+                    data-action-label="Request a Quote">
                     <a href="#" class="faq-link">How much does it cost?</a>
                 </li>
 
@@ -115,34 +117,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
     `;
 
-	const faqLinks = document.querySelectorAll('.faq-link');
-	const modal = footerPlaceholder.querySelector('.modal');
-	const modalQuestion = footerPlaceholder.querySelector('#modal-question');
-	const modalAnswer = footerPlaceholder.querySelector('#modal-answer');
-	const closeBtn = footerPlaceholder.querySelector('.close');
+    const faqLinks = document.querySelectorAll('.faq-link');
+    const modal = footerPlaceholder.querySelector('.modal');
+    const modalQuestion = footerPlaceholder.querySelector('#modal-question');
+    const modalAnswer = footerPlaceholder.querySelector('#modal-answer');
+    const closeBtn = footerPlaceholder.querySelector('.close');
 
-	faqLinks.forEach((link) => {
-		link.addEventListener('click', function (event) {
-			event.preventDefault();
-			const question = this.parentElement.dataset.question;
-			const answer = this.parentElement.dataset.answer;
-			showModal(question, answer);
-		});
-	});
+    faqLinks.forEach((link) => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            const item = this.parentElement;
+            showModal(
+                item.dataset.question,
+                item.dataset.answer,
+                item.dataset.actionUrl,
+                item.dataset.actionLabel
+            );
+        });
+    });
 
-	function showModal(question, answer) {
-		modalQuestion.textContent = question;
-		modalAnswer.textContent = answer;
-		modal.style.display = 'block';
-	}
+    function showModal(question, answer, actionUrl, actionLabel) {
+        modalQuestion.textContent = question;
+        modalAnswer.textContent = answer;
 
-	closeBtn.addEventListener('click', function () {
-		modal.style.display = 'none';
-	});
+        // Remove any previously injected action button
+        const existing = modal.querySelector('.modal-action-btn');
+        if (existing) existing.remove();
 
-	window.addEventListener('click', function (event) {
-		if (event.target == modal) {
-			modal.style.display = 'none';
-		}
-	});
+        if (actionUrl && actionLabel) {
+            const btn = document.createElement('a');
+            btn.href = actionUrl;
+            btn.textContent = actionLabel;
+            btn.className = 'button primary modal-action-btn';
+            btn.style.cssText = 'display:block; width:fit-content; margin:1em auto 0; text-align:center;';
+            modal.querySelector('.modal-content').appendChild(btn);
+        }
+
+        modal.style.display = 'block';
+    }
+
+    closeBtn.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
 });
