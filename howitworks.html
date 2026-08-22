@@ -3,14 +3,15 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5JDWLSJ3YE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async
+        src="https://www.googletagmanager.com/gtag/js?id=G-5JDWLSJ3YE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-5JDWLSJ3YE');
-</script>
+        gtag('config', 'G-5JDWLSJ3YE');
+    </script>
     <title>How it Works!</title>
     <meta charset="utf-8" />
     <meta name="viewport"
@@ -103,60 +104,180 @@
                         </li>
                     </ul>
 
-                    <div class="deposit-procedures">
+                    <div class="deposit-procedures" id="bank-steps">
                         <h2>Deposit Day Procedures</h2>
-                        <div class="procedure">
-                            <p>On Deposit Day, students bring money to
-                                school for deposit.
-                                Generally before school or during lunch
-                                break, parent
-                                volunteers enter the deposits online
-                                at "https://www.schoolsavings.com"</a>
-                            </p>
+                        <div class="steps-actions">
+                            <button type="button"
+                                class="steps-action-btn steps-copy-btn"
+                                data-copy-target="bank-steps-list">Copy
+                                Steps</button>
+                            <button type="button"
+                                class="steps-action-btn steps-print-btn"
+                                data-print-target="bank-steps-list">Print
+                                / Save as PDF</button>
                         </div>
-                        <div class="procedure">
-                            <p>After all deposits are collected, School
-                                Savings software
-                                balances the deposit account. With a
-                                Deposit printout in
-                                hand, the Volunteer deposits the funds
-                                at the local
-                                participating financial institution.</p>
-                        </div>
-                        <div class="procedure">
-                            <p>School Savings, a processor for the
-                                Federal Reserve Bank,
-                                electronically credits the students'
-                                accounts with their
-                                deposit. No manual deposit posting is
-                                required. The minimum
-                                deposit is $.01; There is no fee for
-                                participation or cost
-                                for the saving account.</p>
-                        </div>
-                        <div class="procedure">
-                            <p>Deposits made at school appear on the
-                                students' regular
-                                bank statements. Statements are sent
-                                out monthly or quarterly depending on
-                                the individual bank's procedures.</p>
-                        </div>
+                        <div id="bank-steps-list">
+                            <div class="procedure">
+                                <p>On Deposit Day, students bring money
+                                    to
+                                    school for deposit.
+                                    Generally before school or during
+                                    lunch
+                                    break, parent
+                                    volunteers enter the deposits online
+                                    at
+                                    "https://www.schoolsavings.com"</a>
+                                </p>
+                            </div>
+                            <div class="procedure">
+                                <p>After all deposits are collected,
+                                    School
+                                    Savings software
+                                    balances the deposit account. With a
+                                    Deposit printout in
+                                    hand, the Volunteer deposits the
+                                    funds
+                                    at the local
+                                    participating financial institution.
+                                </p>
+                            </div>
+                            <div class="procedure">
+                                <p>School Savings, a processor for the
+                                    Federal Reserve Bank,
+                                    electronically credits the students'
+                                    accounts with their
+                                    deposit. No manual deposit posting
+                                    is
+                                    required. The minimum
+                                    deposit is $.01; There is no fee for
+                                    participation or cost
+                                    for the saving account.</p>
+                            </div>
+                            <div class="procedure">
+                                <p>Deposits made at school appear on the
+                                    students' regular
+                                    bank statements. Statements are sent
+                                    out monthly or quarterly depending
+                                    on
+                                    the individual bank's procedures.
+                                </p>
+                            </div>
 
-                        <div class="procedure">
-                            <p>Students earn 10 Super Saver Points for
-                                each deposit made at
-                                school, regardless of amount. An
-                                incentive system manages
-                                the Points system and rewards students
-                                for frequent deposits
-                                through a national awards program.</p>
+                            <div class="procedure">
+                                <p>Students earn 10 Super Saver Points
+                                    for
+                                    each deposit made at
+                                    school, regardless of amount. An
+                                    incentive system manages
+                                    the Points system and rewards
+                                    students
+                                    for frequent deposits
+                                    through a national awards program.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
 
-                    <a href="#" class="image main reveal"><img
-                            src="images/howitworks.gif"
-                            alt="How School Savings works." /></a>
+                    <div class="howitworks-map">
+                        <a href="#" class="image main reveal"><img
+                                src="images/howitworks.gif"
+                                alt="How School Savings works." /></a>
+
+                        <button type="button"
+                            class="hotspot hotspot-families"
+                            style="left: 0%; width: 29%;"
+                            data-title="FAMILIES"
+                            data-target="families-content"
+                            data-pdf="images/School Savings Fact Sheet.pdf"
+                            data-pdf-label="Download the School Savings Fact Sheet (PDF)">
+                            <span
+                                class="hotspot-tooltip">FAMILIES</span>
+                        </button>
+
+                        <button type="button"
+                            class="hotspot hotspot-schools"
+                            style="left: 31%; width: 21%;"
+                            data-title="SCHOOLS"
+                            data-target="schools-content"
+                            data-pdf="images/Educators Getting Started Final.pdf"
+                            data-pdf-label="Download the Educators Getting Started Guide (PDF)">
+                            <span class="hotspot-tooltip">SCHOOLS</span>
+                        </button>
+
+                        <a href="#bank-steps"
+                            class="hotspot hotspot-jump"
+                            style="left: 54%; width: 20%;">
+                            <span class="hotspot-tooltip">BANKS
+                                <span class="hotspot-tooltip-sub">Click
+                                    to see Steps</span>
+                            </span>
+                        </a>
+
+                        <button type="button"
+                            class="hotspot hotspot-students"
+                            style="left: 76%; width: 24%;"
+                            data-title="STUDENTS"
+                            data-target="students-content">
+                            <span
+                                class="hotspot-tooltip">STUDENTS</span>
+                        </button>
+                    </div>
+
+                    <!-- Hidden source content shown inside the FAMILIES popup -->
+                    <div id="families-content" hidden>
+                        <p><strong>Our Mission is&hellip;</strong></p>
+                        <p>To inspire a new generation of savers by
+                            equipping financial institution partners
+                            with tools to build community
+                            relationships and promote financial
+                            literacy through school-based banking.</p>
+                    </div>
+
+                    <!-- Hidden source content shown inside the SCHOOLS popup -->
+                    <div id="schools-content" hidden>
+                        <p><strong>The School</strong></p>
+                        <ul>
+                            <li>Confirms participation to bank or
+                                credit union partner</li>
+                            <li>Invites volunteers or staff members
+                                to coordinate program</li>
+                            <li>Provides access to an
+                                Internet-ready computer once weekly
+                                before class or during lunch.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Hidden source content shown inside the STUDENTS popup -->
+                    <div id="students-content" hidden>
+                        <p>Students receive a statement monthly or
+                            quarterly. To reconcile it, they:</p>
+                        <ul>
+                            <li>Compare their statement to what's
+                                online at schoolsavings.com</li>
+                            <li>Add any deposits made at the bank</li>
+                            <li>Delete any withdrawals</li>
+                            <li>Add interest earned</li>
+                            <li>Confirm the balances match</li>
+                        </ul>
+                        <img src="images/savings-register-example.png"
+                            alt="Example School Savings register showing deposits, withdrawals and a savings goal chart" />
+                    </div>
+
+                    <!-- Popup used by the "How it Works" graphic hotspots -->
+                    <div id="graphic-modal" class="modal graphic-modal">
+                        <div class="modal-content">
+                            <span class="close"
+                                id="graphic-modal-close">&times;</span>
+                            <h3 id="graphic-modal-title"></h3>
+                            <div id="graphic-modal-body"></div>
+                            <a id="graphic-modal-download" href="#"
+                                target="_blank"
+                                class="button primary">Download the
+                                PDF</a>
+                        </div>
+                    </div>
+
                     <i class="fa-solid fa-spinner fa-spin"></i>
                     <strong>You
                         can review FDIC regulations</strong>
@@ -207,6 +328,7 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/modal.js"></script>
     <script src="assets/js/menu.js"></script>
+    <script src="assets/js/howitworks-map.js"></script>
 
 
 </body>

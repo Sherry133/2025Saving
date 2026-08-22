@@ -39,15 +39,110 @@
                             FDIC-Insured Saving Deposits
                         </h1>
 
-                        <p>School Savings credits deposits
+                        <!-- <p>School Savings credits deposits
                             electronically
                             avoiding
-                            manual posting.</p>
+                            manual posting.</p> -->
                     </header>
 
-                    <a href="#" class="image main reveal"><img
-                            src="images/howitworks.gif"
-                            alt="students with funny legs" /></a>
+                    <div class="howitworks-map">
+                        <a href="#" class="image main reveal"><img
+                                src="images/howitworks.gif"
+                                alt="How School Savings works." /></a>
+
+                        <button type="button"
+                            class="hotspot hotspot-families"
+                            style="left: 0%; width: 29%;"
+                            data-title="FAMILIES"
+                            data-target="families-content"
+                            data-pdf="images/School Savings Fact Sheet.pdf"
+                            data-pdf-label="Download the School Savings Fact Sheet (PDF)">
+                            <span
+                                class="hotspot-tooltip">FAMILIES</span>
+                        </button>
+
+                        <button type="button"
+                            class="hotspot hotspot-schools"
+                            style="left: 31%; width: 21%;"
+                            data-title="SCHOOLS"
+                            data-target="schools-content"
+                            data-pdf="images/Educators Getting Started Final.pdf"
+                            data-pdf-label="Download the Educators Getting Started Guide (PDF)">
+                            <span class="hotspot-tooltip">SCHOOLS</span>
+                        </button>
+
+                        <a href="#bank-steps"
+                            class="hotspot hotspot-jump"
+                            style="left: 54%; width: 20%;">
+                            <span class="hotspot-tooltip">BANKS
+                                <span class="hotspot-tooltip-sub">Click
+                                    to see Steps</span>
+                            </span>
+                        </a>
+
+                        <button type="button"
+                            class="hotspot hotspot-students"
+                            style="left: 76%; width: 24%;"
+                            data-title="STUDENTS"
+                            data-target="students-content">
+                            <span
+                                class="hotspot-tooltip">STUDENTS</span>
+                        </button>
+                    </div>
+
+                    <!-- Hidden source content shown inside the FAMILIES popup -->
+                    <div id="families-content" hidden>
+                        <p><strong>Our Mission is&hellip;</strong></p>
+                        <p>To inspire a new generation of savers by
+                            equipping financial institution partners
+                            with tools to build community
+                            relationships and promote financial
+                            literacy through school-based banking.</p>
+                    </div>
+
+                    <!-- Hidden source content shown inside the SCHOOLS popup -->
+                    <div id="schools-content" hidden>
+                        <p><strong>The School</strong></p>
+                        <ul>
+                            <li>Confirms participation to bank or
+                                credit union partner</li>
+                            <li>Invites volunteers or staff members
+                                to coordinate program</li>
+                            <li>Provides access to an
+                                Internet-ready computer once weekly
+                                before class or during lunch.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Hidden source content shown inside the STUDENTS popup -->
+                    <div id="students-content" hidden>
+                        <p>Students receive a statement monthly or
+                            quarterly. To reconcile it, they:</p>
+                        <ul>
+                            <li>Compare their statement to what's
+                                online at schoolsavings.com</li>
+                            <li>Add any deposits made at the bank</li>
+                            <li>Delete any withdrawals</li>
+                            <li>Add interest earned</li>
+                            <li>Confirm the balances match</li>
+                        </ul>
+                        <img src="images/savings-register-example.png"
+                            alt="Example School Savings register showing deposits, withdrawals and a savings goal chart" />
+                    </div>
+
+                    <!-- Popup used by the "How it Works" graphic hotspots -->
+                    <div id="graphic-modal" class="modal graphic-modal">
+                        <div class="modal-content">
+                            <span class="close"
+                                id="graphic-modal-close">&times;</span>
+                            <h3 id="graphic-modal-title"></h3>
+                            <div id="graphic-modal-body"></div>
+                            <a id="graphic-modal-download" href="#"
+                                target="_blank"
+                                class="button primary">Download the
+                                PDF</a>
+                        </div>
+                    </div>
                     <section>
 
                         <h2>Overview</h2>
@@ -74,77 +169,94 @@
                             the
                             Federal
                             Reserve
-                            Bank.
+                            Bank eliminating manual posting and
+                            reconciliation.
                         </p>
                     </section>
 
-                    <div class="deposit-procedures">
+                    <div class="deposit-procedures" id="bank-steps">
                         <h2>For Banks and Credit Unions</h2>
-                        <div class="procedure">
-                            <p>Select a local school and notify
-                                School Savings of your intent to
-                                implement at
-                                support@schoolsavings.com. All
-                                School Savings accounts are at the
-                                sponsor institution.
-                            </p>
+                        <div class="steps-actions">
+                            <button type="button"
+                                class="steps-action-btn steps-copy-btn"
+                                data-copy-target="bank-steps-list">Copy
+                                Steps</button>
+                            <button type="button"
+                                class="steps-action-btn steps-print-btn"
+                                data-print-target="bank-steps-list">Print
+                                / Save as PDF</button>
                         </div>
-                        <div class="procedure">
-                            <p>Send
-                                Account
-                                Enrollment Packets
-                                home
-                                with
-                                students. Sponsors may offer saving
-                                and or checking accounts. Accounts may
-                                be in the name of the student or be a
-                                more
-                                traditional custodial account.
-                            </p>
-                        </div>
+                        <div id="bank-steps-list">
+                            <div class="procedure">
+                                <p>Select a local school and notify
+                                    School Savings of your intent to
+                                    implement at
+                                    support@schoolsavings.com. All
+                                    School Savings accounts are at the
+                                    sponsor institution.
+                                </p>
+                            </div>
+                            <div class="procedure">
+                                <p>Send
+                                    Account
+                                    Enrollment Packets
+                                    home
+                                    with
+                                    students. Sponsors may offer saving
+                                    and or checking accounts. Accounts
+                                    may
+                                    be in the name of the student or be
+                                    a
+                                    more
+                                    traditional custodial account.
+                                </p>
+                            </div>
 
-                        <div class="procedure">
-                            <p>Ask the
-                                PTA/PTO President to select Volunteers
-                                to
-                                collect
-                                student
-                                deposits and
-                                deliver
-                                them
-                                to a participating bank
-                                branch. Bankers may also collect
-                                deposits at school. Request Volunteer
-                                training
-                                from
-                                School Savings.
-                            </p>
-                        </div>
+                            <div class="procedure">
+                                <p>Ask the
+                                    PTA/PTO President to select
+                                    Volunteers
+                                    to
+                                    collect
+                                    student
+                                    deposits and
+                                    deliver
+                                    them
+                                    to a participating bank
+                                    branch. Bankers may also collect
+                                    deposits at school. Request
+                                    Volunteer
+                                    training
+                                    from
+                                    School Savings.
+                                </p>
+                            </div>
 
-                        <div class="procedure">
-                            <p>Request and sign a School Savings
-                                Agreement. Receive School
-                                Savings
-                                login
-                                credentials.
-                                888-787-7728 |
-                                CONTACT:
-                                support@schoolsavings.com
-                            </p>
+                            <div class="procedure">
+                                <p>Request and sign a School Savings
+                                    Agreement. Receive School
+                                    Savings
+                                    login
+                                    credentials.
+                                    888-787-7728 |
+                                    CONTACT:
+                                    support@schoolsavings.com
+                                </p>
 
-                        </div>
+                            </div>
 
-                        <div class="procedure">
-                            <p>Offering small savings incentives and
-                                having contests makes saving fun!
-                                Advertise your First Deposit Day
-                                CONTEST
-                                to
-                                students,
-                                parents and the
-                                media to
-                                FIRE-UP participation.
-                            </p>
+                            <div class="procedure">
+                                <p>Offering small savings incentives and
+                                    having contests makes saving fun!
+                                    Advertise your First Deposit Day
+                                    CONTEST
+                                    to
+                                    students,
+                                    parents and the
+                                    media to
+                                    FIRE-UP participation.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -200,6 +312,7 @@
                 <script src="assets/js/main.js"></script>
                 <script src="assets/js/modal.js"></script>
                 <script src="assets/js/menu.js"></script>
+                <script src="assets/js/howitworks-map.js"></script>
 
 
 </body>
