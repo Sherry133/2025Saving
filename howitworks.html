@@ -205,14 +205,16 @@
                             <span class="hotspot-tooltip">SCHOOLS</span>
                         </button>
 
-                        <a href="#bank-steps"
-                            class="hotspot hotspot-jump"
-                            style="left: 54%; width: 20%;">
+                        <button type="button"
+                            class="hotspot hotspot-banks"
+                            style="left: 54%; width: 20%;"
+                            data-title="BANKS &amp; CREDIT UNIONS"
+                            data-target="banks-content"
+                            data-pdf="images/Financial Institutions Getting Started.pdf"
+                            data-pdf-label="Download Financial Institutions Getting Started (PDF)">
                             <span class="hotspot-tooltip">BANKS
-                                <span class="hotspot-tooltip-sub">Click
-                                    to see Steps</span>
-                            </span>
-                        </a>
+                                &amp; CREDIT UNIONS</span>
+                        </button>
 
                         <button type="button"
                             class="hotspot hotspot-students"
@@ -233,6 +235,23 @@
                             with tools to build community
                             relationships and promote financial
                             literacy through school-based banking.</p>
+                    </div>
+
+                    <!-- Hidden source content shown inside the BANKS popup -->
+                    <div id="banks-content" hidden>
+                        <ul>
+                            <li>Watch the Product Tour video to learn
+                                how School Savings works.</li>
+                            <li>Decide to support school banking in
+                                your town.</li>
+                            <li>Determine account type to provide.</li>
+                            <li>Designate branches to support local
+                                schools.</li>
+                            <li>Contact Schools.</li>
+                            <li>Download the Getting Started PDF
+                                below for more information.</li>
+                            <li>See also FAQs.</li>
+                        </ul>
                     </div>
 
                     <!-- Hidden source content shown inside the SCHOOLS popup -->
@@ -304,7 +323,7 @@
                     <ul class="actions special">
                         <li><a href="./quote.html"
                                 class="button primary">Contact
-                                Us for a Quote!</a>
+                                Us to Get Started!</a>
                         </li>
                     </ul>
                 </div>

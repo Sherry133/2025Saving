@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
         <div>
             <h3>Getting Started</h3>
             <ul class="faq-list">
-                <li class="faq-item" data-question="Getting Started Steps"
-                    data-answer="Select a school or two. Contact School Savings at support@schoolsavings.com to register. There is only one bank sponsor per school. All bank accounts are at the sponsor's bank. Minimum deposit is $.01.">
-                    <a href="#" class="faq-link">How do I get started?</a>
+                <li class="faq-item" data-question="Getting Started Steps for Banks &amp; Credit Unions"
+                    data-answer-html="<div class='faq-accordion'><details><summary><strong>1.</strong> Select local schools to implement</summary><p>Select a local school and notify School Savings of your intent to implement at support@schoolsavings.com. All School Savings accounts are at the sponsor institution.</p></details><details><summary><strong>2.</strong> Send Enrollment Packets home</summary><p>Send Account Enrollment Packets home with students. Sponsors may offer saving and/or checking accounts. Accounts may be in the student&#39;s name or be a custodial account.</p></details><details><summary><strong>3.</strong> Ask PTA/PTO to recruit Volunteers</summary><p>Ask the PTA/PTO President to select Volunteers to collect student deposits and deliver them to a participating bank branch. Bankers may also collect deposits at school. Request Volunteer training from School Savings.</p></details><details><summary><strong>4.</strong> Sign the Agreement &amp; get credentials</summary><p>Request and sign a School Savings Agreement. Receive School Savings login credentials. Call 888-787-7728 or email support@schoolsavings.com.</p></details><details><summary><strong>5.</strong> Advertise First Deposit Day!</summary><p>Offering small savings incentives and having contests makes saving fun! Advertise your First Deposit Day CONTEST to students, parents and the media to FIRE-UP participation.</p></details></div>">
+                    <a href="#" class="faq-link">For Banks and Credit Unions</a>
                 <li class="faq-item" data-question="Pricing"
                     data-answer="Reasonable pricing allows all students to participate. Teachers and parents with children in School Savings may also make deposits at school."
                     data-action-url="quote.html"
@@ -35,12 +35,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 </li>
 
                 <li class="faq-item" data-question="Volunteers Manage the Program"
-                    data-answer=" Volunteers selected by the parent teacher organization manage the program.">
+                    data-answer=" Volunteers selected by the parent teacher organization manage the program. School Banking begins on September 1st of each year and ends the second week of June. Schools may choose one day or multiple days during the week to make deposits.">
                     <a href="#" class="faq-link">Who runs the program?</a>
 
-                <li class="faq-item" data-question="School Banking Schedule"
-                    data-answer="School Banking begins on September 1st of each year and ends the second week of June."Schools may choose one day or multiple days during the week to make deposits.>
-                    <a href="#" class="faq-link">When does School Banking occur?</a>
+                <li class="faq-item" data-question="Getting Started Steps for Schools"
+                    data-answer-html="<div class='faq-accordion'><details><summary><strong>1.</strong> Confirm participation with your bank partner</summary><p>Confirm participation to bank or credit union partner.</p></details><details><summary><strong>2.</strong> Invite volunteers or staff to coordinate</summary><p>Invite volunteers or staff members to coordinate program.</p></details><details><summary><strong>3.</strong> Provide Internet-ready computer access</summary><p>Provide access to an Internet-ready computer once weekly before class or during lunch.</p></details></div>">
+                    <a href="#" class="faq-link">Getting Started for Schools</a>
             </ul>
         </div>
 
@@ -131,14 +131,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 item.dataset.question,
                 item.dataset.answer,
                 item.dataset.actionUrl,
-                item.dataset.actionLabel
+                item.dataset.actionLabel,
+                item.dataset.answerHtml
             );
         });
     });
 
-    function showModal(question, answer, actionUrl, actionLabel) {
+    function showModal(question, answer, actionUrl, actionLabel, answerHtml) {
         modalQuestion.textContent = question;
-        modalAnswer.textContent = answer;
+        // answerHtml is developer-set only, never user input
+        if (answerHtml) {
+            modalAnswer.innerHTML = answerHtml;
+        } else {
+            modalAnswer.textContent = answer;
+        }
 
         // Remove any previously injected action button
         const existing = modal.querySelector('.modal-action-btn');
