@@ -35,8 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 </li>
 
                 <li class="faq-item" data-question="Volunteers Manage the Program"
-                    data-answer=" Volunteers selected by the parent teacher organization manage the program. School Banking begins on September 1st of each year and ends the second week of June. Schools may choose one day or multiple days during the week to make deposits.">
-                    <a href="#" class="faq-link">Who runs the program?</a>
+                    data-answer="Ask the PTA/PTO President to select Volunteers to collect student deposits and deliver them
+to a participating bank branch. Bankers may also collect deposits at school. Request Volunteer
+training from School Savings. School Banking begins on September 1st of each year and ends the second week of June. Schools may choose one day or multiple days during the week to make deposits.">
+                    <a href="#" class="faq-link">PTA/PTO Program Participation</a>
 
                 <li class="faq-item" data-question="Getting Started Steps for Schools"
                     data-answer-html="<div class='faq-accordion'><details><summary><strong>1.</strong> Confirm participation with your bank partner</summary><p>Confirm participation to bank or credit union partner.</p></details><details><summary><strong>2.</strong> Invite volunteers or staff to coordinate</summary><p>Invite volunteers or staff members to coordinate program.</p></details><details><summary><strong>3.</strong> Provide Internet-ready computer access</summary><p>Provide access to an Internet-ready computer once weekly before class or during lunch.</p></details></div>">
@@ -74,16 +76,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     <a href="#" class="faq-link">Do the accounts pay interest?</a>
 
 
-                <li class="faq-item" data-question="Are the School Savings accounts FDIC insured?"
-                    data-answer=" Yes, School Savings accounts are FDIC-insured saving or checking accounts at USA banks and credit unions.">
-                    <a href="#" class="faq-link">Are the accounts FDIC insured?</a>
+                <li class="faq-item" data-question="Are the School Savings accounts FDIC/NCUA insured?"
+                    data-answer=" Yes, School Savings accounts are FDIC/NCUA-insured saving or checking accounts at USA banks and credit unions.">
+                    <a href="#" class="faq-link">Are the accounts FDIC/NCUA-insured?</a>
                 </li>
                 <li class="faq-item" data-question="How are deposits credited to student accounts?"
                     data-answer="Because School Savings is processor for the Federal Reserve Bank, deposits are electronically deposited into student accounts through the Federal Reserve Bank which avoids manual deposit posting by branch tellers.">
                     <a href="#" class="faq-link">Electronic Deposit Posting</a></li>
 
                 <li class="faq-item" data-question="When are deposits made at school available?"
-                    data-answer="Currently deposits are available within two days. In the near future, School Savings will be an Authorized FedNow Service provider and as such be able to make deposits available immediately AKA Instant Payments!">
+                    data-answer="Deposits are available within two days UNLESS the bank allows School Savings to process the deposits via its FedNow certified divison, 'idebit'. With FedNow Instant Payments, deposits are available immediately.">
                     <a href="#" class="faq-link">Deposits Availability</a>
             </ul>
         </div>

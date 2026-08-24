@@ -4770,9 +4770,7 @@ article {
 .wrapper>.inner>.main.accent2 input[type=button],
 .wrapper>.inner>.main.accent2 button,
 .wrapper>.inner>.main.accent2 .button {
-  background-image: linear-gradient(to right, #5FD2C4,
-      #F39AB9,
-      #efeff5);
+  background-image: linear-gradient(to right, #f5c48a, #e07a2f, #a35214);
   background-size: 500%;
   animation: background-animation 5s linear infinite alternate;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
@@ -7189,7 +7187,7 @@ body.is-preload #banner>.slider {
 }
 
 #footer .contact-icons li:before {
-  color: #eb8585;
+  color: #e07a2f;
   font-size: 0.85rem;
 }
 
@@ -7281,7 +7279,7 @@ body.is-preload #banner>.slider {
 }
 
 #modal-question {
-  color: #eb8585;
+  color: #e07a2f;
   font-size: 1.25rem;
   font-weight: bold;
 }
@@ -7292,7 +7290,7 @@ body.is-preload #banner>.slider {
 }
 
 .now {
-  color: #eb8585;
+  color: #e07a2f;
 }
 
 /* Page Wrapper */
