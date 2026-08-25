@@ -87,6 +87,162 @@
 				</nav>
 			</header>
 		</div>
+
+		<!-- New Year Tips countdown badge — hidden after Oct 1 2026 -->
+		<a href="./begin-new-year.html" id="newyear-badge" aria-label="Begin New Year Tips">
+			<div class="nybadge-ring">
+				<i class="fa-solid fa-bell nybadge-bell"></i>
+				<span class="nybadge-title">Begin New<br>Year Tips</span>
+				<span class="nybadge-clock" id="nybadge-clock">--:--:--.--</span>
+			</div>
+		</a>
+
+		<style>
+			#newyear-badge {
+				position: fixed;
+				top: 72px;
+				right: 18px;
+				z-index: 9998;
+				display: block;
+				text-decoration: none;
+				transform: rotate(-8deg);
+				animation: nybadge-pulse 3s ease-in-out infinite;
+				filter: drop-shadow(0 4px 16px rgba(224,122,47,0.75));
+			}
+			#newyear-badge:hover {
+				animation: none;
+				transform: rotate(-8deg) scale(1.1);
+				filter: drop-shadow(0 6px 22px rgba(224,122,47,1));
+				transition: transform 0.2s ease, filter 0.2s ease;
+			}
+			.nybadge-ring {
+				width: 126px;
+				height: 126px;
+				background: linear-gradient(135deg, #f5c48a, #e07a2f, #a35214);
+				border-radius: 50%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: flex-start;
+				padding-top: 10px;
+				gap: 3px;
+				box-sizing: border-box;
+			}
+			.nybadge-bell {
+				color: #fff;
+				font-size: 1.9em;
+				animation: nybadge-bell 1.6s ease-in-out infinite;
+				transform-origin: top center;
+				line-height: 1;
+			}
+			.nybadge-title {
+				color: #1a1a1a;
+				font-size: 0.76em;
+				font-weight: 800;
+				letter-spacing: 0.03em;
+				text-transform: uppercase;
+				text-align: center;
+				line-height: 1.2;
+				font-family: Arial, sans-serif;
+			}
+			.nybadge-clock {
+				color: rgba(0,0,0,0.85);
+				font-size: 0.60em;
+				font-weight: 700;
+				font-family: 'Courier New', monospace;
+				letter-spacing: 0;
+				line-height: 1;
+				margin-top: 5px;
+			}
+			@keyframes nybadge-pulse {
+				0%, 100% { transform: rotate(-8deg) scale(1); }
+				50%       { transform: rotate(-8deg) scale(1.07); }
+			}
+			@keyframes nybadge-bell {
+				0%, 100% { transform: rotate(0deg); }
+				12%      { transform: rotate(20deg); }
+				28%      { transform: rotate(-20deg); }
+				42%      { transform: rotate(12deg); }
+				56%      { transform: rotate(-12deg); }
+				70%      { transform: rotate(0deg); }
+			}
+			/* spin off screen, then spring back in */
+			.nybadge-exiting {
+				animation: nybadge-exit 0.8s ease-in forwards !important;
+			}
+			.nybadge-entering {
+				animation: nybadge-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+			}
+			@keyframes nybadge-exit {
+				0%   { transform: rotate(-8deg) scale(1); opacity: 1; }
+				30%  { transform: rotate(-8deg) scale(1.25) translateY(-12px); opacity: 0.9; }
+				100% { transform: rotate(-80deg) scale(0) translateX(60px) translateY(-40px); opacity: 0; }
+			}
+			@keyframes nybadge-enter {
+				0%   { transform: rotate(30deg) scale(0) translateX(-40px); opacity: 0; }
+				65%  { transform: rotate(-14deg) scale(1.18); opacity: 1; }
+				100% { transform: rotate(-8deg) scale(1); opacity: 1; }
+			}
+			@media screen and (max-width: 736px) {
+				#newyear-badge { top: 62px; right: 10px; transform: rotate(-8deg) scale(0.82); }
+			}
+		</style>
+
+		<script>
+			(function () {
+				var badge = document.getElementById('newyear-badge');
+				var ring  = badge.querySelector('.nybadge-ring');
+				var deadline = new Date('2026-10-01T23:59:59.999');
+
+				/* School-themed color palettes: [light, mid, dark] */
+				var palettes = [
+					['#f5c48a', '#e07a2f', '#a35214'], /* orange (default)    */
+					['#fde68a', '#eab308', '#a16207'], /* school-bus yellow   */
+					['#fca5a5', '#ef4444', '#b91c1c'], /* apple red           */
+					['#f9a8d4', '#ec4899', '#be185d'], /* piggy-bank pink     */
+				];
+				var idx = 0;
+
+				function applyPalette(p) {
+					ring.style.background =
+						'linear-gradient(135deg,' + p[0] + ',' + p[1] + ',' + p[2] + ')';
+				}
+
+				function flyAway() {
+					badge.classList.remove('nybadge-entering');
+					badge.classList.add('nybadge-exiting');
+					setTimeout(function () {
+						idx = (idx + 1) % palettes.length;
+						applyPalette(palettes[idx]);
+						badge.classList.remove('nybadge-exiting');
+						badge.classList.add('nybadge-entering');
+						setTimeout(function () {
+							badge.classList.remove('nybadge-entering');
+						}, 700);
+					}, 3500);
+				}
+
+				setInterval(flyAway, 8000);
+
+				function pad(n) { return String(n).padStart(2, '0'); }
+
+				function update() {
+					var now = new Date();
+					if (now > deadline) { badge.style.display = 'none'; return; }
+					var diff = deadline - now;
+					var totalSec = Math.floor(diff / 1000);
+					var h = Math.floor(totalSec / 3600);
+					var m = Math.floor((totalSec % 3600) / 60);
+					var s = totalSec % 60;
+					var cs = Math.floor((diff % 1000) / 10); /* centiseconds */
+					document.getElementById('nybadge-clock').textContent =
+						pad(h) + ':' + pad(m) + ':' + pad(s) + '.' + pad(cs);
+				}
+				update();
+				setInterval(update, 50);
+			})();
+		</script>
+
 		<!-- Nav -->
 		<nav id="menu">
 			<div id="menu-placeholder">
