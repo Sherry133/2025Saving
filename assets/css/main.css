@@ -3862,6 +3862,19 @@ html {
   color: inherit;
 }
 
+/* Contest slide — fix text overflow on mobile only */
+@media screen and (max-width: 736px) {
+  .contest-slide .contest-text h2 {
+    margin: 0 0 0.3em 0 !important;
+    font-size: 1.4em !important;
+    line-height: 1.2 !important;
+  }
+
+  .contest-slide .contest-text p {
+    margin: 0 0 0.5em 0 !important;
+  }
+}
+
 .deposit-procedures {
   counter-reset: procedure;
 }
