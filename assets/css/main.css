@@ -5879,6 +5879,11 @@ article {
   color: #ffffff !important;
 }
 
+/* DISCOVER button in the header nav */
+#header a.button:not(.news-btn):not(.login-button) {
+  color: #e07a2f !important;
+}
+
 @media screen and (max-width: 1280px) {
   #header>.logo span {
     top: -0.05em;
@@ -6450,7 +6455,7 @@ body.is-menu-visible #menu {
 #banner>.items section.accent2 button,
 #banner>.items section.accent2 .button {
   background-image: linear-gradient(to right, #5FD2C4,
-      #ffce1b,
+      #e07a2f,
       #008080);
 
   background-size: 500%;
