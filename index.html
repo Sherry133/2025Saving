@@ -89,11 +89,14 @@
 		</div>
 
 		<!-- New Year Tips countdown badge — hidden after Oct 1 2026 -->
-		<a href="./begin-new-year.html" id="newyear-badge" aria-label="Begin New Year Tips">
+		<a href="./begin-new-year.html" id="newyear-badge"
+			aria-label="Begin New Year Tips">
 			<div class="nybadge-ring">
 				<i class="fa-solid fa-bell nybadge-bell"></i>
-				<span class="nybadge-title">Begin New<br>Year Tips</span>
-				<span class="nybadge-clock" id="nybadge-clock">--:--:--.--</span>
+				<span class="nybadge-title">Begin New<br>Year
+					Tips</span>
+				<span class="nybadge-clock"
+					id="nybadge-clock">--:--:--.--</span>
 			</div>
 		</a>
 
@@ -107,17 +110,19 @@
 				text-decoration: none;
 				transform: rotate(-8deg);
 				animation: nybadge-pulse 3s ease-in-out infinite;
-				filter: drop-shadow(0 4px 16px rgba(224,122,47,0.75));
+				filter: drop-shadow(0 4px 16px rgba(224, 122, 47, 0.75));
 				background: transparent !important;
 				padding: 0 !important;
 				margin: 0 !important;
 			}
+
 			#newyear-badge:hover {
 				animation: none;
 				transform: rotate(-8deg) scale(1.1);
-				filter: drop-shadow(0 6px 22px rgba(224,122,47,1));
+				filter: drop-shadow(0 6px 22px rgba(224, 122, 47, 1));
 				transition: transform 0.2s ease, filter 0.2s ease;
 			}
+
 			.nybadge-ring {
 				width: 126px;
 				height: 126px;
@@ -131,6 +136,7 @@
 				gap: 3px;
 				box-sizing: border-box;
 			}
+
 			.nybadge-bell {
 				color: #fff;
 				font-size: 1.9em;
@@ -138,6 +144,7 @@
 				transform-origin: top center;
 				line-height: 1;
 			}
+
 			.nybadge-title {
 				color: #1a1a1a;
 				font-size: 0.76em;
@@ -148,8 +155,9 @@
 				line-height: 1.2;
 				font-family: Arial, sans-serif;
 			}
+
 			.nybadge-clock {
-				color: rgba(0,0,0,0.85);
+				color: rgba(0, 0, 0, 0.85);
 				font-size: 0.72em;
 				font-weight: 700;
 				font-family: 'Courier New', monospace;
@@ -157,44 +165,103 @@
 				line-height: 1;
 				margin-top: 5px;
 			}
+
 			@keyframes nybadge-pulse {
-				0%, 100% { transform: rotate(-8deg) scale(1); }
-				50%       { transform: rotate(-8deg) scale(1.07); }
+
+				0%,
+				100% {
+					transform: rotate(-8deg) scale(1);
+				}
+
+				50% {
+					transform: rotate(-8deg) scale(1.07);
+				}
 			}
+
 			@keyframes nybadge-bell {
-				0%, 100% { transform: rotate(0deg); }
-				12%      { transform: rotate(20deg); }
-				28%      { transform: rotate(-20deg); }
-				42%      { transform: rotate(12deg); }
-				56%      { transform: rotate(-12deg); }
-				70%      { transform: rotate(0deg); }
+
+				0%,
+				100% {
+					transform: rotate(0deg);
+				}
+
+				12% {
+					transform: rotate(20deg);
+				}
+
+				28% {
+					transform: rotate(-20deg);
+				}
+
+				42% {
+					transform: rotate(12deg);
+				}
+
+				56% {
+					transform: rotate(-12deg);
+				}
+
+				70% {
+					transform: rotate(0deg);
+				}
 			}
+
 			/* spin off screen, then spring back in */
 			.nybadge-exiting {
 				animation: nybadge-exit 0.8s ease-in forwards !important;
 			}
+
 			.nybadge-entering {
 				animation: nybadge-enter 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
 			}
+
 			@keyframes nybadge-exit {
-				0%   { transform: rotate(-8deg) scale(1); opacity: 1; }
-				30%  { transform: rotate(-8deg) scale(1.25) translateY(-12px); opacity: 0.9; }
-				100% { transform: rotate(-80deg) scale(0) translateX(60px) translateY(-40px); opacity: 0; }
+				0% {
+					transform: rotate(-8deg) scale(1);
+					opacity: 1;
+				}
+
+				30% {
+					transform: rotate(-8deg) scale(1.25) translateY(-12px);
+					opacity: 0.9;
+				}
+
+				100% {
+					transform: rotate(-80deg) scale(0) translateX(60px) translateY(-40px);
+					opacity: 0;
+				}
 			}
+
 			@keyframes nybadge-enter {
-				0%   { transform: rotate(30deg) scale(0) translateX(-40px); opacity: 0; }
-				65%  { transform: rotate(-14deg) scale(1.18); opacity: 1; }
-				100% { transform: rotate(-8deg) scale(1); opacity: 1; }
+				0% {
+					transform: rotate(30deg) scale(0) translateX(-40px);
+					opacity: 0;
+				}
+
+				65% {
+					transform: rotate(-14deg) scale(1.18);
+					opacity: 1;
+				}
+
+				100% {
+					transform: rotate(-8deg) scale(1);
+					opacity: 1;
+				}
 			}
+
 			@media screen and (max-width: 736px) {
-				#newyear-badge { top: 62px; right: 10px; transform: rotate(-8deg) scale(0.82); }
+				#newyear-badge {
+					top: 62px;
+					right: 10px;
+					transform: rotate(-8deg) scale(0.82);
+				}
 			}
 		</style>
 
 		<script>
 			(function () {
 				var badge = document.getElementById('newyear-badge');
-				var ring  = badge.querySelector('.nybadge-ring');
+				var ring = badge.querySelector('.nybadge-ring');
 				var deadline = new Date('2026-10-01T23:59:59.999');
 
 				/* School-themed color palettes: [light, mid, dark] */
@@ -324,18 +391,17 @@
 					data-position="top left" class="cover-img" />
 					<div class="overlay-text"
 						style="left: 5%; transform: none; text-align: left; width: 75%;">
-						<!-- <h1
-							style="color: #ffffff; text-shadow: 2px 2px 6px rgba(0,0,0,0.7); font-size: 3em;">
-							Stay Close as a Family!</h1> -->
+
 				</article>
 
-				<article style="background:#f0f4f8;">
-					<div
+				<article class="contest-slide"
+					style="background:#f0f4f8;">
+					<div class="contest-text"
 						style="position:absolute; left:5%; top:50%; transform:translateY(-50%); width:48%; z-index:2;">
 						<h2
-							style="color:#656dba; margin:0 5em 0.5em 0;">
+							style="color:#656dba; margin:0 0 0.3em 0; font-size:1.4em; line-height:1.2;">
 							Back to School Contest</h2>
-						<p style="color:#333; margin:0 5em 0.5em 0;">
+						<p style="color:#333; margin:0 0 0.5em 0;">
 							<strong>WIN
 								A SUPER
 								GROSS CHEMISTRY SET!</strong> To

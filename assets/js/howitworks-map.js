@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', function () {
     ].join('');
     document.body.appendChild(pdfViewer);
 
-    var pvTitle    = document.getElementById('pdf-viewer-title');
+    var pvTitle = document.getElementById('pdf-viewer-title');
     var pvDownload = document.getElementById('pdf-viewer-download');
-    var pvNewTab   = document.getElementById('pdf-viewer-newtab');
-    var pvClose    = document.getElementById('pdf-viewer-close');
-    var pvFrame    = document.getElementById('pdf-viewer-frame');
+    var pvNewTab = document.getElementById('pdf-viewer-newtab');
+    var pvClose = document.getElementById('pdf-viewer-close');
+    var pvFrame = document.getElementById('pdf-viewer-frame');
 
     function openPdfViewer(pdfUrl, label) {
         pvTitle.textContent = label || 'PDF Document';
